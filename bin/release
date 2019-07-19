@@ -1,0 +1,12 @@
+#!/bin/bash
+BUILD_DIR=$1
+
+cat << EOF
+---
+addons: []
+config_vars:
+  PATH: ${HOME}nginx/sbin:${HOME}/app/vendor/tomcat/bin:/usr/bin:/bin:${PATH}
+default_process_types:
+  web: ./start.sh
+EOF
+
